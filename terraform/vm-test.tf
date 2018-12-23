@@ -4,13 +4,15 @@ resource "vsphere_virtual_machine" "vm" {
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
 
   num_cpus                    = 2
-  memory                      = 1024
+  memory                      = 2048
   guest_id                    = "${data.vsphere_virtual_machine.template.guest_id}"
   wait_for_guest_net_timeout  = 0
   wait_for_guest_net_routable = false
 
+
   network_interface {
-    network_id = "${data.vsphere_network.network.id}"
+    network_id   = "${data.vsphere_network.network.id}"
+    adapter_type = "${data.vsphere_virtual_machine.template.network_interface_types[0]}"
   }
 
   disk {

@@ -1,0 +1,8 @@
+vsphere_user =""
+vsphere_password =""
+vsphere_server =""
+datacenter ="GZ"
+datastore ="datastore"
+network ="public"
+cluster ="Dev"
+template_name ="CentOS-7-Minimal-1810-Test-v1"
